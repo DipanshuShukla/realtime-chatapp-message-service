@@ -3,6 +3,7 @@ package com.dipanshushukla.realtimechatappmessageservice.dto;
 import com.dipanshushukla.realtimechatappmessageservice.entity.ChatRoomMembers;
 import com.dipanshushukla.realtimechatappmessageservice.model.ChatRoomMembersId;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class ChatRoomMembersDTO {
 
     private Long chatId;
+    @NotNull(message = "'userId' is required!")
     private Long userId;
 
     // Static method to convert entity to DTO

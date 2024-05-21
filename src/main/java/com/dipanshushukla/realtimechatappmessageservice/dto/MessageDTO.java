@@ -6,6 +6,8 @@ import com.dipanshushukla.realtimechatappmessageservice.entity.Message;
 import com.dipanshushukla.realtimechatappmessageservice.model.MessageStatus;
 import com.dipanshushukla.realtimechatappmessageservice.model.MessageType;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +18,15 @@ import lombok.NoArgsConstructor;
 public class MessageDTO {
 
     private Long messageId;
+    @NotNull
     private Long chatRoomId;
+    @NotNull
     private Long userId;
+    @NotEmpty
     private String content;
     private Timestamp timestamp;
-    private MessageStatus status;
-    private MessageType type;
+    private MessageStatus status = MessageStatus.UNREAD;
+    private MessageType type = MessageType.TEXT;
 
     // Static method to convert entity to DTO
     public static MessageDTO fromEntity(Message entity) {

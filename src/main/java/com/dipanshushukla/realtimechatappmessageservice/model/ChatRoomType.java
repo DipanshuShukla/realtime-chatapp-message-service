@@ -1,6 +1,6 @@
 package com.dipanshushukla.realtimechatappmessageservice.model;
 
-public enum ChatType {
+public enum ChatRoomType {
     PUBLIC,
     PRIVATE,
     GROUP,
